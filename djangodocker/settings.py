@@ -61,8 +61,7 @@ DATABASES = {
         'NAME': 'docker',
         'USER': 'docker',
         'PASSWORD': 'docker',
-        'HOST': os.environ['DB_1_PORT_5432_TCP_ADDR'],
-        'PORT': os.environ['DB_1_PORT_5432_TCP_PORT'],
+        'HOST': 'db',
     }
 }
 
