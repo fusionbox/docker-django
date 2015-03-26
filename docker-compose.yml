@@ -1,0 +1,19 @@
+db:
+  image: postgres:latest
+  environment:
+    USER: postgres
+    PASS: ''
+    DB: postgres
+app:
+  build: .
+  command: uwsgi --ini /etc/uwsgi.conf
+  links:
+    - db
+  volumes:
+    - ./src/:/app
+front:
+  build: containers/front/
+  links:
+    - app
+  ports:
+    - "8000:80"
